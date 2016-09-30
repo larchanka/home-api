@@ -2,7 +2,7 @@ var Forecast = require('forecast');
 var config = require('../inc/config.json');
 
 // Vars
-var apiKey = config.forecastApiKey;
+var apiKey = process.env.FAPI || '';
 var weatherCoords = config.weatherCoords;
 
 var forecast = new Forecast({
