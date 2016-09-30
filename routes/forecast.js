@@ -1,11 +1,11 @@
-var Forecast = require('forecast');
-var config = require('../inc/config.json');
+const Forecast = require('forecast');
+const config = require('../inc/config.json');
 
 // Vars
-var apiKey = process.env.FAPI || '';
-var weatherCoords = config.weatherCoords;
+const apiKey = process.env.FAPI || '';
+const weatherCoords = config.weatherCoords;
 
-var forecast = new Forecast({
+const forecast = new Forecast({
   service: 'forecast.io',
   key: apiKey,
   units: 'celcius',
@@ -16,9 +16,9 @@ var forecast = new Forecast({
     }
 });
 
-module.exports = function(request, response) {
+module.exports = (request, response) => {
   
-  return forecast.get(weatherCoords, function(err, weather) {
+  return forecast.get(weatherCoords, (err, weather) => {
     if(err) {
       return response.status(500).send('Something broke!');
     }

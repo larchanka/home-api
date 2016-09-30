@@ -8,7 +8,7 @@ const parser = new xml2js.Parser();
 module.exports = (request, response) => {
   const limit = request.query.limit || 100;
   
-  return fetchUrl(config.newsUrl, function(error, meta, body) {
+  return fetchUrl(config.newsUrl, (error, meta, body) => {
     let originalData;
     let data;
     let responseBody;
@@ -20,7 +20,7 @@ module.exports = (request, response) => {
     originalData = body.toString('utf-8');
     
     if (originalData) {
-      return parser.parseString(originalData, function (err, result) {
+      return parser.parseString(originalData, (err, result) => {
 
         if (err) {
           return response.status(500).send({error: true, error: err});
