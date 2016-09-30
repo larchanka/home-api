@@ -29,3 +29,29 @@ body {
   text-align: center;
   font-size: 32px;
 }
+
+.news-wrapper {
+  list-style: none;
+  box-sizing: border-box;
+  display: block;
+  padding: 40px 40px 40px 20px;
+  margin: 0;
+  height: 100vh;
+  overflow: auto;
+}
+
+.news-wrapper li {
+  margin-bottom: 5px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #666;
+}
+
+.news-wrapper li:last-child {
+  border-bottom: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.news-wrapper li span {
+  color: #666;
+}
